@@ -34,10 +34,10 @@ else if (file_exists($logfile_loc2))
 else {
 	$failureMsg = "error reading log file: <br/>".
 		"looked for log file in $logfile_loc1 and $logfile_loc2 but couldn't find it.<br/>".
-		"if you know where your dmesg (boot) log file is located, set it's location in " . $_SERVER[SCRIPT_NAME];
+		"if you know where your dmesg (boot) log file is located, set it's location in " . $_SERVER['SCRIPT_NAME'];
 	exit;
 }
-	
+
 
 if (is_readable($logfile) == false) {
 	$failureMsg = "error reading log file: <u>$logfile</u> <br/>".
