@@ -1,12 +1,4 @@
 <?php
-    require_once dirname(__FILE__) . '/vendor/autoload.php';
-
-    // create a Dotenv instance and have it use our .env file
-    $dotenv = new Dotenv\Dotenv(__DIR__ . '/');
-
-    // load environment variables
-    $dotenv->load();
-
     isset($_REQUEST['error']) ? $error = $_REQUEST['error'] : $error = "";
 
 	// clean up error code to avoid XSS
