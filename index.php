@@ -1,4 +1,12 @@
 <?php
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
+
+    // create a Dotenv instance and have it use our .env file
+    $dotenv = new Dotenv\Dotenv(__DIR__ . '/');
+
+    // load environment variables
+    $dotenv->load();
+
     include ("library/checklogin.php");
     $operator = $_SESSION['operator_user'];
 
@@ -9,11 +17,11 @@
     include('include/config/logging.php');
 
 ?>
-		
-		
-		
+
+
+
 		<div id="contentnorightbar">
-		
+
 				<h2 id="Intro"><a href="#"></a></h2>
 				<p>
 
@@ -22,15 +30,15 @@
 ?>
 				</p>
 		</div>
-		
+
 		<div id="footer">
-		
+
 								<?php
         include 'page-footer.php';
 ?>
-		
+
 		</div>
-		
+
 </div>
 </div>
 

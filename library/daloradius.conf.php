@@ -26,11 +26,11 @@
 $configValues['DALORADIUS_VERSION'] = '0.9-9';
 $configValues['FREERADIUS_VERSION'] = '2';
 $configValues['CONFIG_DB_ENGINE'] = 'mysqli';
-$configValues['CONFIG_DB_HOST'] = 'localhost';
-$configValues['CONFIG_DB_PORT'] = '3306';
-$configValues['CONFIG_DB_USER'] = 'root';
-$configValues['CONFIG_DB_PASS'] = '';
-$configValues['CONFIG_DB_NAME'] = 'radius';
+$configValues['CONFIG_DB_HOST'] = $_ENV['DB_HOST'];
+$configValues['CONFIG_DB_PORT'] = $_ENV['DB_PORT'];
+$configValues['CONFIG_DB_USER'] = $_ENV['DB_USER'];
+$configValues['CONFIG_DB_PASS'] = $_ENV['DB_PASSWORD'];
+$configValues['CONFIG_DB_NAME'] = $_ENV['DB_DBNAME'];
 $configValues['CONFIG_DB_TBL_RADCHECK'] = 'radcheck';
 $configValues['CONFIG_DB_TBL_RADREPLY'] = 'radreply';
 $configValues['CONFIG_DB_TBL_RADGROUPREPLY'] = 'radgroupreply';

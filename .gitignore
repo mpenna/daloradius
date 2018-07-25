@@ -2,3 +2,5 @@
 *.log
 *.db
 invoice_preview.html
+/vendor
+.env
