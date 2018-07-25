@@ -1,6 +1,14 @@
-<?php 
-	isset($_REQUEST['error']) ? $error = $_REQUEST['error'] : $error = "";
-	
+<?php
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
+
+    // create a Dotenv instance and have it use our .env file
+    $dotenv = new Dotenv\Dotenv(__DIR__ . '/');
+
+    // load environment variables
+    $dotenv->load();
+
+    isset($_REQUEST['error']) ? $error = $_REQUEST['error'] : $error = "";
+
 	// clean up error code to avoid XSS
 	$error = strip_tags(htmlspecialchars($error));
 ?>
@@ -14,7 +22,7 @@
 <link rel="stylesheet" href="css/1.css" type="text/css" media="screen,projection" />
 
 </head>
- 
+
 <body onLoad="document.login.operator_user.focus()">
 <?php
     include_once ("lang/main.php");
@@ -25,25 +33,25 @@
 
 		<div id="header">
                 <h1><a href="index.php"> <img src="images/daloradius_small.png" border=0/></a></h1>
-				
+
 				<h2>
-				
-				<?php echo $l['all']['copyright1']; ?>	
+
+				<?php echo $l['all']['copyright1']; ?>
 				</h2>
 				<br/>
-				
+
 				<ul id="subnav">
-				
+
 				<li><?php echo $l['all']['daloRADIUS'] ?></li>
-				
+
 				</ul>
-		
+
 		</div>
-		
+
 		<div id="sidebar">
-		
+
 		<h2><?php echo $l['text']['LoginRequired'] ?></h2>
-				
+
 		<h3><?php echo $l['text']['LoginPlease'] ?></h3>
 
 				<form name="login" action="dologin.php" class="sidebar" method="post" >
@@ -67,40 +75,40 @@
 						<input class="sidebutton" type="submit" value="Login" tabindex=3 />
 					</ul>
 				</form>
-						
+
 		</div>
-		
-		
-		
+
+
+
 		<div id="contentnorightbar">
-		
+
 				<h2 id="Intro"><a href="#" onclick="javascript:toggleShowDiv('helpPage')"><?php echo $l['Intro']['login.php'] ?></a></h2>
-				
-                                <div id="helpPage" style="display:none;visibility:visible" >				
+
+                                <div id="helpPage" style="display:none;visibility:visible" >
 					<?php echo $l['helpPage']['login'] ?>
 				</div>
-				
+
 <?php
-	 if ($error) { 
+	 if ($error) {
 		echo $error;
 		echo $l['messages']['loginerror'];
 	}
 ?>
-				
 
 
-		
+
+
 		</div>
-		
+
 		<div id="footer">
-		
+
 																<?php
         include 'page-footer.php';
 ?>
 
-		
+
 		</div>
-		
+
 </div>
 </div>
 
